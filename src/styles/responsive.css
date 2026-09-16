@@ -1,0 +1,104 @@
+@media (max-width: 1000px) {
+  :root { --shell: min(calc(100% - 56px), 820px); }
+  .site-header { padding-inline: 28px; grid-template-columns: 1fr auto; }
+  .desktop-nav, .header-cta { display: none; }
+  .menu-button { position: absolute; top: 15px; right: 18px; z-index: 2; display: flex !important; width: 42px; height: 42px; border: 1px solid rgba(53,45,62,.22); background: rgba(255,255,255,.28); flex-direction: column; align-items: center; justify-content: center; gap: 7px; cursor: pointer; }
+  .menu-button span { width: 24px; height: 2px; background: var(--ink); transition: transform .25s; }
+  .menu-button[aria-expanded="true"] span:first-child { transform: translateY(4px) rotate(45deg); }
+  .menu-button[aria-expanded="true"] span:last-child { transform: translateY(-4px) rotate(-45deg); }
+  .mobile-nav { position: fixed; z-index: 29; inset: 0; padding: 130px 28px 40px; display: flex; flex-direction: column; gap: 24px; color: var(--ink); background: rgba(247,242,251,.99); transform: translateY(-100%); visibility: hidden; transition: transform .35s, visibility .35s; }
+  .mobile-nav.open { transform: none; visibility: visible; }
+  .mobile-nav a { padding-bottom: 20px; border-bottom: 1px solid var(--line); font: 700 30px var(--serif); }
+  .hero { min-height: 0; padding: 130px 28px 70px; grid-template-columns: 1fr; }
+  .hero-copy { max-width: 740px; }
+  .hero-visual { height: 500px; margin-top: 20px; }
+  .portrait-frame { width: 330px; }
+  .hero-index { display: none; }
+  .facts-inner { grid-template-columns: repeat(2, 1fr); padding-block: 20px; }
+  .fact { min-height: 74px; display: flex; justify-content: center; flex-direction: column; }
+  .availability { padding-left: 28px; grid-column: span 2; }
+  .about { grid-template-columns: 1fr; gap: 30px; }
+  .about-content { padding-top: 0; }
+  .education-inner { grid-template-columns: 1fr; gap: 42px; }
+  .section-heading.horizontal { align-items: start; }
+  .section-heading.horizontal > p { text-align: right; }
+  .timeline-item { grid-template-columns: 95px 32px 1fr; }
+  .timeline-body { padding-left: 28px; }
+  .job-highlights { grid-template-columns: 1fr; gap: 13px; }
+  .contact-inner { grid-template-columns: 1fr; gap: 20px; }
+}
+
+@media (max-width: 640px) {
+  :root { --shell: calc(100% - 36px); }
+  .section-spacing { padding-top: 95px; padding-bottom: 95px; }
+  .site-header { height: 70px; padding-inline: 18px; }
+  .brand { font-size: 11px; }
+  .hero { padding: 105px 18px 52px; }
+  .hero h1 { display: block; }
+  .hero-name { display: block; font-size: clamp(52px, 15vw, 64px); letter-spacing: -.06em; }
+  .hero-name-en { display: block; margin-top: 12px; font-size: 12px; }
+  .hero-role { margin-top: 22px; gap: 12px; }
+  .hero-role strong { font-size: 23px; }
+  .hero-role span { padding-left: 12px; font-size: 9px; }
+  .hero-summary { max-width: 100%; font-size: 16px; line-height: 1.85; overflow-wrap: anywhere; word-break: break-all; }
+  .hero-actions { align-items: flex-start; flex-direction: column; gap: 20px; }
+  .hero-visual { height: 410px; min-height: 0; margin-top: 35px; }
+  .portrait-frame { width: min(280px, 76vw); transform: none; }
+  .orbit-one { width: 330px; height: 330px; }
+  .orbit-two { width: 380px; height: 380px; }
+  .visual-caption { right: 0; }
+  .point-two { right: -6px; }
+  .facts-inner { grid-template-columns: 1fr 1fr; }
+  .fact { padding-left: 14px; }
+  .availability { padding: 16px 14px 8px; }
+  .about-content > p { font-size: 17px; }
+  .about-content .lead { font-size: 20px; }
+  .section-heading.horizontal { display: block; padding-bottom: 45px; }
+  .section-heading.horizontal > p { margin-top: 24px; text-align: left; }
+  .timeline-item { grid-template-columns: 1fr; padding-left: 22px; border-left: 1px solid rgba(255,255,255,.12); }
+  .timeline-date { padding: 36px 0 17px; flex-direction: row; gap: 10px; }
+  .timeline-marker { display: none; }
+  .timeline-body { padding: 0 0 58px; border-top: 0; }
+  .timeline-body h3 { font-size: 25px; }
+  .job-topline { gap: 15px; }
+  .job-actions { flex-direction: column; align-items: flex-end; }
+  .job-detail-button { min-width: 108px; height: 42px; padding-inline: 13px; }
+  .job-detail-button span { font-size: 12px; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .skill-card { min-height: 300px; padding: 34px 28px; }
+  .software-showcase { margin-top: 54px; }
+  .software-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .software-grid { grid-template-columns: 1fr; }
+  .software-item { min-height: 116px; padding: 20px; grid-template-columns: 74px 1fr; }
+  .education-card { min-height: 0; padding: 34px 28px; grid-template-columns: 1fr; }
+  .education-years { padding-bottom: 24px; flex-direction: row; justify-content: flex-start; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.22); }
+  .education-years i { width: 38px; height: 1px; }
+  .education-main { padding: 28px 0 0; }
+  .education-mark { right: 8px; bottom: -25px; font-size: 130px; }
+  .quote blockquote br { display: none; }
+  .contact-inner { min-height: 0; padding-block: 90px; }
+  .contact-details { padding-top: 20px; }
+  .contact-link { grid-template-columns: 52px 1fr; }
+  .contact-link strong { font-size: 19px; }
+  .site-footer .section-shell { padding-block: 25px; grid-template-columns: 1fr auto; }
+  .site-footer p:nth-child(2) { display: none; }
+  .experience-modal { padding: 14px; align-items: end; }
+  .experience-modal-panel { width: 100%; min-height: 72vh; max-height: 90vh; padding: 30px 24px; }
+  .experience-modal-content { min-height: 48vh; }
+  .experience-detail { padding-top: 25px; }
+  .experience-detail-lead { font-size: 16px; }
+  .experience-detail-list li { grid-template-columns: 34px 1fr; padding: 20px 0; }
+  .experience-detail-list p { font-size: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+@media print {
+  .site-header, .mobile-nav, .hero-actions, .hero-index, .page-noise, .toast { display: none !important; }
+  .hero { min-height: 570px; height: auto; padding-top: 70px; }
+  .section-spacing { padding-block: 65px; }
+  [data-reveal] { opacity: 1 !important; transform: none !important; }
+}
