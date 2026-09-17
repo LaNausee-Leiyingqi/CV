@@ -7,6 +7,7 @@ const experienceModal = document.querySelector('[data-experience-modal]');
 const modalTitle = document.querySelector('[data-modal-title]');
 const modalContent = document.querySelector('[data-modal-content]');
 const jobDetailButtons = document.querySelectorAll('[data-job-detail]');
+const modalBackground = document.querySelectorAll('.site-header, .mobile-nav, main, .site-footer');
 let lastFocusedElement = null;
 let toastTimeout;
 
@@ -17,19 +18,25 @@ const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 
 updateHeader();
 window.addEventListener('scroll', updateHeader, { passive: true });
 
+const setMenuOpen = (isOpen) => {
+  menuButton.setAttribute('aria-expanded', String(isOpen));
+  menuButton.setAttribute('aria-label', isOpen ? '关闭导航' : '打开导航');
+  mobileNav.classList.toggle('open', isOpen);
+  mobileNav.inert = !isOpen;
+  document.body.classList.toggle('menu-open', isOpen);
+};
+
 menuButton.addEventListener('click', () => {
-  const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-  menuButton.setAttribute('aria-expanded', String(!isOpen));
-  menuButton.setAttribute('aria-label', isOpen ? '打开导航' : '关闭导航');
-  mobileNav.classList.toggle('open', !isOpen);
-  document.body.classList.toggle('menu-open', !isOpen);
+  setMenuOpen(menuButton.getAttribute('aria-expanded') !== 'true');
+});
+
+window.matchMedia('(min-width: 901px)').addEventListener('change', (event) => {
+  if (event.matches) setMenuOpen(false);
 });
 
 mobileNav.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', () => {
-    menuButton.setAttribute('aria-expanded', 'false');
-    mobileNav.classList.remove('open');
-    document.body.classList.remove('menu-open');
+    setMenuOpen(false);
   });
 });
 
@@ -37,11 +44,25 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && experienceModal.classList.contains('open')) {
     closeExperienceModal();
   } else if (event.key === 'Escape' && mobileNav.classList.contains('open')) {
-    menuButton.setAttribute('aria-expanded', 'false');
-    menuButton.setAttribute('aria-label', '打开导航');
-    mobileNav.classList.remove('open');
-    document.body.classList.remove('menu-open');
+    setMenuOpen(false);
     menuButton.focus();
+  }
+
+  if (event.key === 'Tab') {
+    const focusable = experienceModal.classList.contains('open')
+      ? [...experienceModal.querySelectorAll('button, a[href], [tabindex="0"]')]
+      : mobileNav.classList.contains('open')
+        ? [menuButton, ...mobileNav.querySelectorAll('a')]
+        : [];
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (first && event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (last && !event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
   }
 });
 
@@ -50,16 +71,19 @@ const openExperienceModal = (company, key, trigger) => {
   lastFocusedElement = trigger;
   modalTitle.textContent = company;
   modalContent.replaceChildren(template.content.cloneNode(true));
+  modalContent.scrollTop = 0;
   experienceModal.classList.add('open');
   experienceModal.setAttribute('aria-hidden', 'false');
   document.body.classList.add('modal-open');
-  experienceModal.querySelector('.experience-modal-close').focus();
+  modalBackground.forEach((element) => { element.inert = true; });
+  experienceModal.querySelector('.experience-modal-close').focus({ preventScroll: true });
 };
 
 function closeExperienceModal() {
   experienceModal.classList.remove('open');
   experienceModal.setAttribute('aria-hidden', 'true');
   document.body.classList.remove('modal-open');
+  modalBackground.forEach((element) => { element.inert = element === mobileNav; });
   modalContent.replaceChildren();
   lastFocusedElement?.focus();
 }

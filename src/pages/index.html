@@ -2,12 +2,12 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="雷璎琪的个人求职网站——动作捕捉、动画制作与虚拟内容生产。" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="雷璎琪的个人求职网站——动作捕捉与虚拟内容生产。" />
     <meta name="theme-color" content="#111714" />
     <title>雷璎琪｜动作捕捉</title>
-    <link rel="stylesheet" href="../styles/app.css?v=20260916-2" />
-    <script defer src="../scripts/main.js?v=20260916-1"></script>
+    <link rel="stylesheet" href="../styles/app.css?v=20260916-3" />
+    <script defer src="../scripts/main.js?v=20260916-3"></script>
   </head>
   <body>
     <div class="page-noise" aria-hidden="true"></div>
@@ -26,13 +26,12 @@
         <a href="#contact">联系我</a>
       </nav>
 
-      <!-- <a class="header-cta" href="mailto:1823883618@qq.com">发起沟通</a> -->
-      <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+      <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" aria-controls="mobile-nav" data-menu-button>
         <span></span><span></span>
       </button>
     </header>
 
-    <nav class="mobile-nav" aria-label="移动端导航" data-mobile-nav>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="移动端导航" data-mobile-nav inert>
       <a href="#about">关于我</a>
       <a href="#experience">工作经历</a>
       <a href="#skills">专业能力</a>
@@ -43,7 +42,7 @@
     <main id="top">
       <section class="hero section-shell">
         <div class="hero-copy" data-reveal>
-          <p class="eyebrow"><span></span> 求职个人主页 · PERSONAL PROFILE</p>
+          <p class="eyebrow">个人简历 <span>PERSONAL PROFILE</span></p>
           <h1>
             <span class="hero-name">雷璎琪</span>
             <span class="hero-name-en">LEI YINGQI</span>
@@ -52,8 +51,10 @@
             <strong>动作捕捉师</strong>
             <span>MOTION CAPTURE ARTIST</span>
           </p>
+        </div>
+        <div class="hero-intro" data-reveal>
           <p class="hero-summary">
-            拥有 5 年动作捕捉经验，熟悉从现场拍摄、数据处理到引擎落地的完整流程，能够在高强度制作周期中稳定推进项目交付。
+            拥有 5 年动作捕捉经验，熟悉从现场拍摄、数据处理到引擎落地的完整流程，统筹动捕棚排期与资源，在高强度制作周期中稳定推进项目交付。
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#experience">
@@ -65,11 +66,6 @@
         </div>
 
         <div class="hero-visual" data-reveal>
-          <div class="orbit orbit-one"></div>
-          <div class="orbit orbit-two"></div>
-          <div class="tracking-point point-one"><i></i><span>TRACK 01</span></div>
-          <div class="tracking-point point-two"><i></i><span>TRACK 02</span></div>
-          <div class="tracking-point point-three"><i></i><span>LIVE</span></div>
           <div class="portrait-frame">
             <img src="../assets/images/image.jpg" alt="雷璎琪个人照片" width="855" height="1156" />
           </div>
@@ -79,11 +75,6 @@
           </div>
         </div>
 
-        <div class="hero-index" aria-hidden="true">
-          <span>01</span>
-          <i></i>
-          <span>05</span>
-        </div>
       </section>
 
       <section class="facts-bar" aria-label="个人信息">
@@ -100,19 +91,24 @@
             <span>最高学历</span>
             <strong>本科</strong>
           </div>
+          <div class="fact" data-reveal>
+            <span>意向城市</span>
+            <strong>广州</strong>
+          </div>
         </div>
       </section>
 
       <section class="about section-shell section-spacing" id="about">
         <div class="section-heading" data-reveal>
           <p class="section-no">01 / ABOUT</p>
+          <h2>协作与交付</h2>
         </div>
         <div class="about-content" data-reveal>
           <p class="lead">
             我擅长在高强度制作周期中保持清晰判断，拆解优先级，并与导演、动画、技术美术等上下游角色顺畅协作。
           </p>
           <p>
-            从 OptiTrack、Qualisys、Vicon 光学系统，到 MotionBuilder、UE4/5 数据处理，我熟悉动作捕捉生产中的关键环节。面对档期紧、需求变化频繁的项目，能够统筹拍摄与数据任务，保证节点和质量。
+            从 OptiTrack、Qualisys、Vicon 光学系统，到 MotionBuilder、UE4/5 数据处理，我熟悉动作捕捉生产中的关键环节。面对档期紧、需求变化频繁的项目，能够统筹拍摄与数据任务，保证节点和质量。每次项目结束后及时总结并改进问题，适应新环境、主动融入团队，保持对行业新技术的学习与关注。
           </p>
         </div>
       </section>
@@ -135,11 +131,11 @@
                 <div class="job-topline">
                   <div>
                     <p class="job-role">动画设计 · 动捕师</p>
-                    <h3>腾讯光子 · 腾娱光环工作室</h3>
+                    <h3>腾讯光子动捕棚</h3>
                   </div>
                   <div class="job-actions">
                     <span class="current-tag">CURRENT</span>
-                    <button class="job-detail-button" type="button" title="点击查看详细工作介绍" aria-label="查看腾讯光子·腾娱光环工作室详细工作介绍" data-job-detail="腾讯光子 · 腾娱光环工作室" data-job-key="tencent">
+                    <button class="job-detail-button" type="button" title="点击查看详细工作介绍" aria-label="查看腾讯光子动捕棚详细工作介绍" data-job-detail="腾讯光子动捕棚" data-job-key="tencent">
                       <span>查看详情</span><b aria-hidden="true">》</b>
                     </button>
                   </div>
@@ -150,7 +146,8 @@
                 <ul class="job-highlights">
                   <li>独立推进从场地准备到 UE5 实时预览的全流程交付</li>
                   <li>引入 Captury AI 方案，缩短低复杂资产拍摄与清理周期</li>
-                  <li>负责现场运维、团队复盘及虚拟直播技术支持</li>
+                  <li>统筹多项目排期与资源分配，提升动捕棚产能利用率</li>
+                  <li>制定操作规范与人员分工，沉淀教学视频及团队知识库</li>
                 </ul>
                 <div class="tags"><span>VICON</span><span>CAPTURY AI</span><span>STRETCHSENSE</span><span>UE5</span></div>
               </div>
@@ -184,16 +181,16 @@
                 <div class="job-topline">
                   <div>
                     <p class="job-role">动作捕捉师</p>
-                    <h3>浙江博采传媒有限公司</h3>
+                    <h3>浙江博采传媒</h3>
                   </div>
-                  <button class="job-detail-button" type="button" title="点击查看详细工作介绍" aria-label="查看浙江博采传媒有限公司详细工作介绍" data-job-detail="浙江博采传媒有限公司" data-job-key="bocai">
+                  <button class="job-detail-button" type="button" title="点击查看详细工作介绍" aria-label="查看浙江博采传媒详细工作介绍" data-job-detail="浙江博采传媒" data-job-key="bocai">
                     <span>查看详情</span><b aria-hidden="true">》</b>
                   </button>
                 </div>
                 <p>
                   负责项目动作捕捉，使用 Qualisys、UE4 与 MotionBuilder 协同完成光学动捕、数据整理、镜头渲染与修复，并支持直播类项目中的实时动捕与推流协作。
                 </p>
-                <p class="project-line">参与项目：《诞辰》、节目动作捕捉、虚拟偶像 Amei 直播、奶泡泡央视直播等</p>
+                <p class="project-line">参与项目：《诞辰》、农夫学生水剧集捕捉、虚拟偶像 Amei 直播、奶泡泡央视直播等</p>
                 <div class="tags"><span>QUALISYS</span><span>MOTIONBUILDER</span><span>VIRTUAL LIVE</span></div>
               </div>
             </article>
@@ -228,8 +225,8 @@
             <div class="skill-icon">
               <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 36V19l15-8 15 8v17l-15 7zM24 27V11m0 16 15-8M24 27 9 19"/></svg>
             </div>
-            <h3>生产流程协同</h3>
-            <p>善于拆解需求、规划优先级并协调拍摄与后期任务，在高压周期中稳定推进交付。</p>
+            <h3>动捕棚运营与产能</h3>
+            <p>统筹多项目排期、设备与人员资源，并行安排拍摄与数据处理，制定操作规范与维护分工，保障交付节点。</p>
           </article>
           <article class="skill-card" data-reveal>
             <span class="card-index">04</span>
@@ -359,7 +356,7 @@
             <span></span><span></span>
           </button>
         </div>
-        <div class="experience-modal-content" data-modal-content></div>
+        <div class="experience-modal-content" tabindex="0" role="region" aria-label="工作经历正文" data-modal-content></div>
       </section>
     </div>
 
@@ -371,11 +368,11 @@
         <ul class="experience-detail-list">
           <li>
             <span>01</span>
-            <div><strong>全流程项目管理</strong><p>主导对接《和平精英》《英雄联盟》等头部项目及多款在研项目的动捕需求。独立完成从场地准备、拍摄执行到数据修复、重定向及 UE5 实时预览的全流程交付，确保关键节点 100% 按时达成。</p></div>
+            <div><strong>全流程项目管理</strong><p>主导对接《和平精英》《英雄联盟》等头部项目及多款在研项目的动捕需求。独立完成从场地准备、拍摄执行到数据修复、重定向及 UE5 实时预览的全流程交付，与各环节协作沟通，确保关键节点 100% 按时达成，并保证最终效果。</p></div>
           </li>
           <li>
             <span>02</span>
-            <div><strong>技术流程优化</strong><p>针对传统动捕瓶颈，在生产管线中引入 Captury 等 AI 视频动捕方案，针对低复杂度资产替代传统拍摄，有效缩短拍摄与数据清理周期。</p></div>
+            <div><strong>技术流程优化</strong><p>针对传统动捕瓶颈，在生产管线中引入 Captury 等 AI 视频动捕方案，针对低复杂度资产替代传统拍摄，有效缩短拍摄与数据清理周期，降低场地与人力占用。</p></div>
           </li>
           <li>
             <span>03</span>
@@ -383,10 +380,14 @@
           </li>
           <li>
             <span>04</span>
-            <div><strong>团队协作与复盘</strong><p>定期复盘团队拍摄与交付瓶颈，通过合理拆分优先级、并行安排拍摄与数据处理任务，在需求变更频繁的项目中保障节点不受影响；主动录制标准化操作教学视频，沉淀团队知识库，降低重复沟通成本，推动团队整体技术水平提升。</p></div>
+            <div><strong>动捕棚运营与产能管理</strong><p>统筹多项目动捕排期与资源分配，根据项目优先级、设备占用与档期压力制定拍摄计划；通过并行安排光学拍摄与数据处理任务，提升棚内整体产能利用率，保障多项目并行时交付节点不受影响。</p></div>
           </li>
           <li>
             <span>05</span>
+            <div><strong>团队协作与知识沉淀</strong><p>定期复盘团队拍摄与交付瓶颈，通过合理拆分优先级、并行安排拍摄与数据处理任务，在需求变更频繁的项目中保障节点不受影响；主动录制标准化操作教学视频，沉淀团队知识库，降低重复沟通成本，方便成员随时查询自学，推动团队整体技术水平提升。制定动捕棚操作规范，明确拍摄、数据处理与设备维护分工，推动团队技术进步。</p></div>
+          </li>
+          <li>
+            <span>06</span>
             <div><strong>虚拟直播方向</strong><p>熟练操作 BMD 等直播导播台及推流设备，具备动捕与直播联动的实时内容产出能力，可支持虚拟主播等实时动捕推流场景；撰写 3 篇设备使用基础文档发布于公司 Wiki，沉淀操作规范，降低团队设备学习门槛。</p></div>
           </li>
         </ul>
